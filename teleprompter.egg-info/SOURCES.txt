@@ -1,0 +1,9 @@
+README.md
+main.py
+setup.py
+teleprompter.egg-info/PKG-INFO
+teleprompter.egg-info/SOURCES.txt
+teleprompter.egg-info/dependency_links.txt
+teleprompter.egg-info/entry_points.txt
+teleprompter.egg-info/requires.txt
+teleprompter.egg-info/top_level.txt

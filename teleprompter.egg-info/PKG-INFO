@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: teleprompter
+Version: 0.0.1
+Summary: an email schedule queue and pop-up prompter
+Author: Luew Lawlan Leminkainen
+Requires-Dist: Click
+Requires-Dist: apscheduler
+Requires-Dist: rich
+Requires-Dist: pretty_errors
+Requires-Dist: ipython
+
+An email schedule queue and pop-up prompter designed to replace crontab in 	giving schedules for important email, and follow-ups. It should have it's own prompter that opens up 	neomutt with the desired email and its attachemnts if any.

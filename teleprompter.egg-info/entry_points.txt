@@ -1,0 +1,2 @@
+[console_scripts]
+paana = main:cli

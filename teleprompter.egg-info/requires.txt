@@ -1,0 +1,5 @@
+Click
+apscheduler
+rich
+pretty_errors
+ipython

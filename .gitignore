@@ -1,0 +1,8 @@
+*.swp
+*.sw[a-z]
+*.sw??
+myenv/
+__pycache__/
+myenv/*
+__pycache__/*
+
