@@ -1,0 +1,60 @@
+=encoding utf8
+
+=head1 NAME
+
+paana - a email scheduler
+
+=head1 SYNOPSIS
+
+
+I<paan> B<[ add ]> [ name ] [ timestamp ] B<[ --subject | --sender ]> TEXT B<[ --recipients ] > TEXT  
+
+I<paan> B<[ rm ]>  INDEX 
+
+I<paan> B<[ sift ]>   
+
+=head1 DESCRIPTION
+
+the email scheduler works on a database that you need to fill using the add command. Once the database has items
+the sift command will process them based on their timestamps. Timestamps need to follow a strict ISO 8601 formating.
+briefly this is either 'YYYY-MM-DDTHH:MM:SS' or 'YYYY-MM-DD HH:MM:SS'. 
+
+=head1 COMMANDS
+
+This section describes the available options for the command.
+
+=head1 add
+
+The add command fills the database. it is necessary to provide it with at least three fields: name, timestamp, and recipients.
+name, and timestamp are arguments while the recipients must be filled out as an option.
+
+=over 4
+
+=item B<--option1>
+
+Description of option 1
+
+=item B<--option2>
+
+Description of option 2.
+
+=back
+
+=head1 SEE ALSO
+
+List any related man pages or external resources here.
+
+=head1 AUTHOR
+
+Luew Lemminkainen 
+<github.com/tunnelthrutime>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is MIT. 
+Copyright 2023 TunnelThruTime
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+=cut

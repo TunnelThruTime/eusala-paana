@@ -5,4 +5,8 @@ myenv/
 __pycache__/
 myenv/*
 __pycache__/*
+teleprompter.egg-info/
+teleprompter.egg-info/*
+eusela.egg-info/
+eusela.egg-info/*
 
