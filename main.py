@@ -23,7 +23,7 @@
 from datetime import datetime
 import re, sys, os, configparser
 import termios, tty, subprocess
-import click
+import click, click_completion
 import pickle
 from datetime import datetime, timedelta
 from rich import print
@@ -46,6 +46,9 @@ repoconfig = os.path.join(git_root, 'xonf', 'koyomi.db')
 console = Console(width=config.getint('console', 'width'))
 global hairpin
 hairpin = config.get('general', 'hairpin')
+click_completion.init()
+
+# [ ] TODO: test if completions work without click_completion, and Jinja2 <01-01-24, TunnelThruTime> #
 
 # removed calendar artifacts to prevent errors
 
@@ -211,3 +214,5 @@ cli.add_command(handler.show)
 cli.add_command(handler.rm)
 cli.add_command(handler.crop)
 
+if __name__ == '__main__':
+    cli()

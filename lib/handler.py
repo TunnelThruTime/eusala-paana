@@ -21,16 +21,16 @@
 
 from datetime import datetime
 import re, sys, os, configparser
-import click
+import click, click_completion
 import pickle, json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from rich import print
 from rich.console import Console
 import pretty_errors
 import os, sys, re
 import rich, pretty_errors
 from apscheduler.schedulers.blocking import BlockingScheduler
-
+click_completion.init()
 # removed calendar artifacts to prevent errors
 
 
@@ -65,6 +65,17 @@ def script_access_to_resources():
             )
 
 # script_access_to_resources()
+
+def complete_datetime(ctx, args, incomplete):
+    today = date.today()
+    completions = []
+    for i in range(180):
+        dt = today + timedelta(days=i)
+        completion = dt.strftime('%Y-%m-%d')
+        completion_label = dt.strftime('%A')  # Get the day of the week
+        if completion.startswith(incomplete):
+            completions.append(completion)
+    return completions
 
 class KoyomiManager:
     def __init__(self, picklefile):
@@ -329,7 +340,7 @@ def cli():
 
 @cli.command()
 @click.argument('name', type=str)
-@click.argument('timestamp', type=str)
+@click.argument('timestamp', type=str, shell_complete=complete_datetime)
 @click.option('--picklefile', type=str, default=repoconfig)
 @click.option('--description', type=str, default=None)
 @click.option('--uid', type=str, default=None)
@@ -380,6 +391,7 @@ def add(picklefile, name, timestamp, uid, description, subject, sender, created,
     }
 
     manager.save_to_pickle(event_dict, hairpin, destructive=False, force=force, show_results=show)
+    click_completion.main(args=([name, timestamp]))
 
 @cli.command()
 @click.option('--picklefile', type=str, default=repoconfig)

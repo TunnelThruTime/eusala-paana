@@ -55,6 +55,15 @@ pending reminders will remain pending until you have sent the emails. paana does
 initialized in the scripting. once completed the sift command will move the item to the completed list and remove it from the reminders
 list.
 
+# Installation
+
+clone the repo, use `python -m venv custenv`, `source custenv/bin/activate', and then install with pip. After this is
+done you can follow instructions about the completions below.
+
+add the line `paana sift` to your bashrc or zshrc config file to utilize the prompt, or simply check the database regularly
+with that command.
+
+
 # Configuration
 
 paana has a config.ini file which the interface reads it base configuration from and there are some elements which can 
@@ -105,6 +114,18 @@ By default the two lists are 'reminders', and 'accompli', but feel free to use t
 Do you need a subject bar string. Yes of course, but it
 might be a cool idea to have presets for what type of email your writing. Just like it might be best to have differrent
 presets for the type of neomutt command you are running. Does it include attachments? 
+
+### Addition notes
+
+paana was written with the click module, and for that reason has some builtin completion copacities. In click pallets version
+8.1.x., which is bound to outdated when you come across this project, they state that a completions shell script can be compiled
+with, and Ive configurated this to 'paana':
+
+```
+_PAANA_COMPLETE=zsh_source paana > _paana
+```
+at which point you should test your fpath with `echo $fpath`, choose a suitable directory, and move the file there.
+If you are having trouble consult the your shell scripting language documentation.
 
 ### Furthur Reading
 

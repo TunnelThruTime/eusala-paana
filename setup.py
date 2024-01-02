@@ -13,6 +13,8 @@ setup(
         author='Luew Lawlan Leminkainen',
         install_requires=[
             'Click',
+            'click_completion',
+            'Jinja2',
 	    'apscheduler',
         'rich',
         'pretty_errors',
